@@ -1,10 +1,10 @@
 package br.com.appjuneb.JuneStudyB;
 
-public class CreateTransactionUsecase {
+public class TransactionsUseCase {
 
     private final TransactionRepository repository;
 
-    public CreateTransactionUsecase(TransactionRepository repository) {
+    public TransactionsUseCase(TransactionRepository repository) {
         this.repository = repository;
     }
 
@@ -15,6 +15,10 @@ public class CreateTransactionUsecase {
                 transaction.getNature()
         );
         return this.repository.create(transactionToSave);
+    }
+
+    public Transaction findById(String transactionId) {
+        return this.repository.findById(transactionId);
     }
 
 }
