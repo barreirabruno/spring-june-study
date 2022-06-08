@@ -15,4 +15,9 @@ public class SpringBootConfig {
     public CreateTransactionUsecase create() {
         return new CreateTransactionUsecase(this.database());
     }
+
+    @Bean
+    public FindTransactionUsecase findById() {
+        return new FindTransactionUsecase(this.database());
+    }
 }
