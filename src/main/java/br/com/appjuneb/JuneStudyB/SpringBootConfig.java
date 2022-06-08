@@ -12,12 +12,7 @@ public class SpringBootConfig {
     }
 
     @Bean
-    public CreateTransactionUsecase create() {
-        return new CreateTransactionUsecase(this.database());
-    }
-
-    @Bean
-    public FindTransactionUsecase findById() {
-        return new FindTransactionUsecase(this.database());
+    public TransactionsUseCase create() {
+        return new TransactionsUseCase(this.database());
     }
 }
