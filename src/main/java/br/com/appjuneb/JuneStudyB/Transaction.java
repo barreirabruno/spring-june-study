@@ -1,6 +1,7 @@
 package br.com.appjuneb.JuneStudyB;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Transaction {
     String id;
@@ -8,8 +9,8 @@ public class Transaction {
     BigDecimal amount;
     TransactionNature nature;
 
-    public Transaction(String id, String descriptions, BigDecimal amount, TransactionNature nature) {
-        this.id = id;
+    public Transaction(String descriptions, BigDecimal amount, TransactionNature nature) {
+        this.id = UUID.randomUUID().toString();
         this.descriptions = descriptions;
         this.amount = amount;
         this.nature = nature;
