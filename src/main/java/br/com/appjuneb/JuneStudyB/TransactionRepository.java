@@ -12,4 +12,9 @@ public class TransactionRepository implements TransactionRepositoryInterface {
         this.inMemoryDatabase.put(transaction.getId(), transaction);
         return transaction;
     }
+
+    @Override
+    public Transaction findById(String transactionId) {
+        return this.inMemoryDatabase.get(transactionId);
+    }
 }
